@@ -1,4 +1,4 @@
-package main
+package gofetch
 
 import (
 	"encoding/json"
