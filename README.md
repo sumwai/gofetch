@@ -88,12 +88,12 @@ func main(){
 
 ## With
 
-You can also custom the `with option` by using `DoFunc` type.
+You can also custom the `with option` by using `Option` type.
 
 ```go
 package gofetch
 
-type DoFunc func(*Request)
+type Option func(*Request)
 ```
 
 ### Example
@@ -109,10 +109,10 @@ func main(){
     client.GET("http://something.com/get", nil)
 }
 
-func WithCookie(cookie string) gofetch.DoFunc {
-    return func(req *gofech.Request) {
-        req.Headers["Cookie"] = cookie
-    }
+func WithCookie(cookie string) gofetch.Option {
+	return func(req *gofetch.Request) {
+		req.Headers["Cookie"] = cookie
+	}
 }
 ```
 
